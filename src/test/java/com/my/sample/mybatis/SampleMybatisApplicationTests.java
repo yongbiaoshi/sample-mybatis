@@ -1,15 +1,14 @@
 package com.my.sample.mybatis;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.my.sample.mybatis.entity.po.User;
 import com.my.sample.mybatis.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
-import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,17 +20,19 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 @Slf4j
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class SampleMybatisApplicationTests {
 
     @Autowired
     UserService userService;
 
+    private static Long userId;
+
     @BeforeAll
     public static void beforeAll() {
         log.info("开始单元测试");
     }
+
 
     @Test
     public void userAddTest() {
@@ -45,7 +46,16 @@ public class SampleMybatisApplicationTests {
 
         userService.save(u);
 
+        userId = u.getId();
+
         log.info("创建用户测试结果：{}", u);
+    }
+
+    @Test
+    public void userRemoveTest() {
+        boolean r = userService.removeById(userId);
+        log.info("删除用户结果：{}", r);
+        assertThat(r, is(true));
     }
 
     @Test

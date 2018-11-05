@@ -74,7 +74,7 @@ public class MyBatisPlusCustomGenerator {
         pc.setEntity("entity.po");
         pc.setService("service");
         pc.setServiceImpl("service.impl");
-        pc.setMapper("mapper.mapper");
+        pc.setMapper("dao.mapper");
         pc.setXml("xml");
         mpg.setPackageInfo(pc);
 

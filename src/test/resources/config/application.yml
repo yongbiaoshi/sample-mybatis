@@ -12,3 +12,5 @@ spring:
       minimum-idle: 10
       username: root
       password: root
+logging:
+  config: classpath:config/logback-test.xml

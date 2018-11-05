@@ -1,4 +1,4 @@
-package com.my.sample.mybatis.mapper.mapper;
+package com.my.sample.mybatis.dao.mapper;
 
 import com.my.sample.mybatis.entity.po.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;

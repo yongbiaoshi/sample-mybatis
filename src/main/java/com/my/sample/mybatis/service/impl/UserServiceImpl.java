@@ -1,7 +1,7 @@
 package com.my.sample.mybatis.service.impl;
 
 import com.my.sample.mybatis.entity.po.User;
-import com.my.sample.mybatis.mapper.mapper.UserMapper;
+import com.my.sample.mybatis.dao.mapper.UserMapper;
 import com.my.sample.mybatis.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
