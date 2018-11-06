@@ -1,16 +1,18 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2://mem/test?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true
+    schema: schema.sql
+    data: data.sql
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 10
 mybatis-plus:
   global-config:
     refresh: false
   mapper-locations: classpath*:mybatis/*.xml
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/employees?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true
-    hikari:
-      maximum-pool-size: 20
-      minimum-idle: 10
-      username: root
-      password: root
 logging:
   config: classpath:config/logback-test.xml
